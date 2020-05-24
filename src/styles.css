@@ -7,3 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: #0000bb;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:visited {
+  color: #0000bb;
+}
+a:hover {
+  color: #0000bb;
+  text-decoration: underline;
+}
+a:active {
+  color: #0000bb;
+}

@@ -1,23 +1,23 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import SearchBox from "../component/SearchBox";
-import { Typography } from '@material-ui/core';
+import React from 'react';
+import { useHistory } from "react-router-dom";
+import SearchBox from "../components/SearchBox";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 800,
-    margin: '15% auto'
+    maxWidth: 800,
+    margin: '15% auto',
   },
 }));
 
 function IndexPage() {
   const classes = useStyles();
+  const history = useHistory();
+
   return (
-      <Box display="flex" p={1} className={classes.root} flexDirection="column" justifyContent="center" alignItems="center">
-        <Typography variant="h4" gutterBottom>Search GitHub</Typography>
-        <SearchBox />
-      </Box>
+    <div className={classes.root}>
+      <SearchBox action={(searchParam) => history.push(`/search/${searchParam}`)} />
+    </div>
   );
 }
 
