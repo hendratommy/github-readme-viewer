@@ -1,0 +1,18 @@
+{
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "7aa1370a84f0b21c81f3bebb1e90aac94e106f9f",
+    "size": 486,
+    "url": "https://api.github.com/repos/hendratommy/docker-odoo10/contents/README.md?ref=master",
+    "html_url": "https://github.com/hendratommy/docker-odoo10/blob/master/README.md",
+    "git_url": "https://api.github.com/repos/hendratommy/docker-odoo10/git/blobs/7aa1370a84f0b21c81f3bebb1e90aac94e106f9f",
+    "download_url": "https://raw.githubusercontent.com/hendratommy/docker-odoo10/master/README.md",
+    "type": "file",
+    "content": "IyBPZG9vIDEwIG9uIERvY2tlciBDb250YWluZXIKClRyeSBvdXQsIHBsYXlp\nbmcsIGFuZCBleHBsb3JlIE9kb28xMCBvbiBjb250YWluZXIuCgojIyBFbnZp\ncm9ubWVudCBWYXJpYWJsZXMKCi0gYCR7SE9NRX1gLCB1c2VyIGBob21lYCBk\naXJlY3RvcnkuIFZvbHVtZXMgYXJlIG1hcHBlZCB0byBgJHtIT01FfS9kb2Nr\nZXJfdm9sdW1lc2AsIHlvdSBtaWdodCB3YW50IHRvIGNoYW5nZSB0aGlzLgot\nIGAke1BPU1RHUkVTX1VTRVJ9YCBQb3N0Z3JlU1FMIHVzZXIKLSBgJHtQT1NU\nR1JFU19QQVNTV09SRH1gIFBvc3RncmVTUUwgcGFzc3dvcmQKCiMjIFJ1bgoK\nYGBgYmFzaApkb2NrZXItY29tcG9zZSB1cCAtZCAtLWJ1aWxkCmBgYAoKSSdt\nIG5vdCBiaW5kaW5nIHRoZSBQb3N0Z3JlU1FMIHBvcnQsIGlmIHlvdSB3YW50\nIHRvIGJyb3dzZSB0aGUgZGF0YWJhc2UgeW91IG5lZWQgdG8gdW5jb21tZW50\nIHRoZSBgcG9ydHNgIHNlY3Rpb24gZnJvbSB0aGUgYGRiYC4K\n",
+    "encoding": "base64",
+    "_links": {
+        "self": "https://api.github.com/repos/hendratommy/docker-odoo10/contents/README.md?ref=master",
+        "git": "https://api.github.com/repos/hendratommy/docker-odoo10/git/blobs/7aa1370a84f0b21c81f3bebb1e90aac94e106f9f",
+        "html": "https://github.com/hendratommy/docker-odoo10/blob/master/README.md"
+    }
+}

@@ -9,18 +9,25 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Skeleton from '@material-ui/lab/Skeleton';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import { fetchReadMe, getReadMe } from '../../actions/githubAction'
+import React, { useEffect, useReducer } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { fetchReadMe } from '../../actions/githubAction';
+import { reducer, initialState } from '../../reducer/markDownViewerReducer'
+import Markdown from '../../components/Markdown';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    position: 'relative',
+    position: 'sticky',
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
+  content: {
+    padding: theme.spacing(3),
+    marginBottom: theme.spacing(5),
+    marginLeft: theme.spacing(5),
+  }
 }));
 
 const Transition = React.forwardRef((props, ref) => (
@@ -35,25 +42,23 @@ function useQuery() {
 function MarkDownViewer({ onClose }) {
   const classes = useStyles();
 
-  console.log('md')
-
   let { repoName } = useParams();
   repoName = decodeURIComponent(repoName);
 
   const query = useQuery();
   const repoUrl = decodeURIComponent(query.get('repository'));
 
-  // const state = store.markDownViewer;
-
-  // useEffect(() => {
-  //   fetchReadMe(repoUrl, dispatch);
-  // }, [repoUrl, dispatch]);
-
-  const [state, setState] = useState({});
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    getReadMe(repoUrl).then(data => setState(data));
+    fetchReadMe(repoUrl, dispatch);
   }, [repoUrl]);
+
+  // const [state, setState] = useState({});
+
+  // useEffect(() => {
+  //   getReadMe(repoUrl).then(data => setState(data));
+  // }, [repoUrl]);
 
   return (
     <Dialog fullScreen open TransitionComponent={Transition}>
@@ -63,20 +68,20 @@ function MarkDownViewer({ onClose }) {
             <CloseIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            { repoName }
+            {repoName}
           </Typography>
         </Toolbar>
       </AppBar>
       <Box display="flex" flex={1} flexDirection="column">
-        {false ?
+        {state.loading ?
           <>
             <Skeleton variant="text" />
             <Skeleton variant="text" animation={false} />
             <Skeleton variant="text" animation="wave" />
           </> :
-          <>
-            <code>{state.content}</code>
-          </>
+          <div className={classes.content}>
+            <Markdown>{state.readme.content}</Markdown>
+          </div>
         }
 
       </Box>

@@ -1,10 +1,10 @@
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { Route, useHistory, useParams, useRouteMatch } from "react-router-dom";
 import { fetchRepos } from '../../actions/githubAction';
 import ProjectCard from '../../components/ProjectCard';
-import { useRootReducer } from '../../reducer/rootReducer';
+import { reducer, initialState } from '../../reducer/searchResultReducer';
 import MarkDownViewer from './MarkDownViewer';
 
 const useStyles = makeStyles((theme) => ({
@@ -24,19 +24,15 @@ const useStyles = makeStyles((theme) => ({
 function SearchResultView() {
   const classes = useStyles();
 
-  console.log('search');
-
   const { username } = useParams();
   const { path, url } = useRouteMatch();
   const history = useHistory();
 
-  const [store, dispatch] = useRootReducer();
-
-  const state = store.searchResult;
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     fetchRepos(username, dispatch);
-  }, [username, dispatch]);
+  }, [username]);
 
 
   return (
@@ -65,7 +61,7 @@ function SearchResultView() {
         <Route path={`${path}/:repoName`}>
 
           <Box display="flex" flex={1} flexDirection="column" className={classes.column}>
-            <MarkDownViewer store={store} dispatch={dispatch} onClose={() => history.goBack()} />
+            <MarkDownViewer onClose={() => history.goBack()} />
           </Box>
 
         </Route>

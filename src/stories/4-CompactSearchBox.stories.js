@@ -1,5 +1,5 @@
 import React from 'react';
-import CompactSearchBox from '../component/CompactSearchBox';
+import CompactSearchBox from '../components/CompactSearchBox';
 
 export default {
   title: 'Compact Search Box',

@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchTextField from '../component/SearchTextField';
+import SearchTextField from '../components/SearchTextField';
 
 export default {
   title: 'Search Text Field',

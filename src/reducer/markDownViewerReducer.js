@@ -18,13 +18,22 @@ export const reducer = (state = initialState, action) => {
         loading: true,
       };
     case GET_README_SUCCESS: {
+      let error = null;
+      let { content, encoding } = action.payload;
+
+      if (encoding !== 'base64') {
+        error = { message: `unknown encoding: ${encoding}` }
+      } else {
+        content = atob(content);
+      }
+
       return {
         ...state,
         loading: false,
-        error: null,
+        error,
         readme: {
-          content: action.payload.content,
-          encoding: action.payload.encoding,
+          content,
+          encoding
         },
       };
     }

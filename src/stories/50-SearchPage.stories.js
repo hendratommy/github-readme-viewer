@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchPage from '../pages/SearchPage';
 import IndexPage from '../pages/IndexPage';
+import { MemoryRouter } from 'react-router-dom';
 
 export default {
   title: 'Search Page',
@@ -9,5 +10,5 @@ export default {
 
 export const Index = () => <IndexPage />
 
-export const Search = () => <SearchPage />
+export const Search = () => <MemoryRouter initialEntries={['/']}><SearchPage /></MemoryRouter>
 
