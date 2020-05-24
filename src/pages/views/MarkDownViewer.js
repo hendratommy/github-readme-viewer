@@ -12,8 +12,8 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useReducer } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { fetchReadMe } from '../../actions/githubAction';
-import { reducer, initialState } from '../../reducer/markDownViewerReducer'
 import Markdown from '../../components/Markdown';
+import { initialState, reducer } from '../../reducer/markDownViewerReducer';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

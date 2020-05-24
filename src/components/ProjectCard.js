@@ -2,11 +2,11 @@ import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import HomeIcon from '@material-ui/icons/Home';
+import Skeleton from '@material-ui/lab/Skeleton';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,7 +65,7 @@ function ProjectCard({ name, href, htmlUrl, skeleton, description, homepage, lic
     <Box display="flex" flexDirection="column" alignSelf="flex-start" className={clsx(classes.root, className)}>
       <Typography variant="caption" color="textSecondary" gutterBottom>{htmlUrl}</Typography>
       <Link to={href}><Typography variant="h5">{name}</Typography></Link>
-      <div className={classes.space} />
+      <div className={classes.space} />ßß
       <Typography variant="body2">{description}</Typography>
       <div className={classes.space} />
       {homepage && <Box display="flex" alignItems="center"><HomeIcon fontSize="small" /><Typography className={classes.iconLabel} variant="body2">{homepage}</Typography></Box>}

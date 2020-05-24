@@ -20,10 +20,10 @@ function SearchBox({ action, className }) {
   const classes = useStyles();
 
   return (
-      <Box display="flex" flexDirection="column" className={clsx(classes.root, className)}>
-        <Typography className={classes.label} variant="h4" gutterBottom>Search GitHub</Typography>
-        <SearchTextField action={action} />
-      </Box>
+    <Box display="flex" flexDirection="column" className={clsx(classes.root, className)}>
+      <Typography className={classes.label} variant="h4" gutterBottom>Search GitHub</Typography>
+      <SearchTextField action={action} />
+    </Box>
   );
 }
 

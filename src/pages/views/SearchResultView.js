@@ -4,7 +4,7 @@ import React, { useEffect, useReducer } from 'react';
 import { Route, useHistory, useParams, useRouteMatch } from "react-router-dom";
 import { fetchRepos } from '../../actions/githubAction';
 import ProjectCard from '../../components/ProjectCard';
-import { reducer, initialState } from '../../reducer/searchResultReducer';
+import { initialState, reducer } from '../../reducer/searchResultReducer';
 import MarkDownViewer from './MarkDownViewer';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,7 @@ function SearchResultView() {
               {
                 state.error ? <Typography variant="h6">{state.error.response ? state.error.response.data.message : state.error.message}</Typography> :
                   state.repos.map((repo) => (
-                    <ProjectCard key={`${username}_${repo.id}`} className={classes.row} href={`${url}/${encodeURIComponent(repo.fullName)}?repository=${encodeURIComponent(repo.url)}`} 
+                    <ProjectCard key={`${username}_${repo.id}`} className={classes.row} href={`${url}/${encodeURIComponent(repo.fullName)}?repository=${encodeURIComponent(repo.url)}`}
                       name={repo.fullName} htmlUrl={repo.htmlUrl} description={repo.description} homepage={repo.homepage} license={repo.license} />
                   ))
               }

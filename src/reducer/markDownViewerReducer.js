@@ -1,8 +1,4 @@
-import {
-  GET_README_REQUEST,
-  GET_README_SUCCESS,
-  GET_README_FAILED,
-} from "../actions/githubAction";
+import { GET_README_FAILED, GET_README_REQUEST, GET_README_SUCCESS } from "../actions/githubAction";
 
 export const initialState = {
   loading: false,
