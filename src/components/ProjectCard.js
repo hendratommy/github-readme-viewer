@@ -65,7 +65,7 @@ function ProjectCard({ name, href, htmlUrl, skeleton, description, homepage, lic
     <Box display="flex" flexDirection="column" alignSelf="flex-start" className={clsx(classes.root, className)}>
       <Typography variant="caption" color="textSecondary" gutterBottom>{htmlUrl}</Typography>
       <Link to={href}><Typography variant="h5">{name}</Typography></Link>
-      <div className={classes.space} />ßß
+      <div className={classes.space} />
       <Typography variant="body2">{description}</Typography>
       <div className={classes.space} />
       {homepage && <Box display="flex" alignItems="center"><HomeIcon fontSize="small" /><Typography className={classes.iconLabel} variant="body2">{homepage}</Typography></Box>}
